@@ -4,9 +4,9 @@ import SingleQuestion from './Question';
 function App() {
   const [questions,setQuestions] = useState(data);
   return <main>
-    <div class="container">
+    <div className="container">
       <h3>Question and Answers about Login</h3>
-      <section class="info">
+      <section className="info">
         {
           questions.map((question) => {
            return  <SingleQuestion key={question.id} {...question} />

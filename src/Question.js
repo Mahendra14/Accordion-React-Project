@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 const Question = ({title,info}) => {
-  return <article class="question">
+  const [showInfo,setShowInfo] = useState(false);
+  return <article className="question">
     <header>
-      <h4 class="title">{title}</h4>
-      <button class="btn">btn</button>
+      <h4 className="title">{title}</h4>
+      <button className="btn" onClick = {() => {setShowInfo(!showInfo)}}>
+        { showInfo ? <AiOutlineMinus/> : <AiOutlinePlus/>}
+      </button>
     </header>
-    <p class="info">{info}</p>
+    {showInfo && <p className="info">{info}</p>}
   </article>;
 };
 
